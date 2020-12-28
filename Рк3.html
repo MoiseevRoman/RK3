@@ -35,7 +35,8 @@
                 elem = document.createElement('div');
                 elem.id = id + 1;
                 elem.style.position = 'relative';
-                elem.textContent = text;
+                var txt = documentCreateNode(text);
+                elem.appendChild(txt);
                 elem.style.width = '1500px';
                 elem.style.left = '20px';
                 elem.classList.add('unselected');
@@ -56,7 +57,7 @@
             }
         }
         function change_name(){
-            selected.textContent = prompt();
+            selected.ChildNodes[0].nodeValue = prompt();
         }
         function del(){
             selected.remove();
